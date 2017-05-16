@@ -22,4 +22,12 @@ public class TestPageController {
 		System.out.println("From Test page controller");
 		return "testpage";
 	}
+	
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String getLoginPage(){
+
+		System.out.println("Requet To Show Login Page");
+		return "login";
+	}
+	
 }
