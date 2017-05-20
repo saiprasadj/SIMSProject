@@ -1,10 +1,11 @@
-package com.sims.daos;
+package com.sims.dao.impl;
 
 import javax.annotation.Resource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.sims.dao.DepartmentDao;
 import com.sims.models.Department;
 
 @Repository(value = "departmentDao")

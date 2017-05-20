@@ -1,4 +1,4 @@
-package com.sims.daos;
+package com.sims.dao;
 
 import com.sims.models.Department;
 
