@@ -40,6 +40,9 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.sims.models.Department</value>
+				<value>com.sims.models.WareHouse</value>
+				<value>com.sims.models.Employee</value>
+				<value>com.sims.models.Section</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

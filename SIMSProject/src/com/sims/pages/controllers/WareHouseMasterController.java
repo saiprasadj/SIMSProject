@@ -9,29 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sims.models.Department;
-import com.sims.services.DepartmentService;
+import com.sims.models.WareHouse;
+import com.sims.services.WareHouseMasterService;
 
 @Controller
-@RequestMapping(value = "/product/*")
-public class ProductMasterController {
+@RequestMapping(value = "/warehouse/*")
+public class WareHouseMasterController {
 	
-	@Resource(name="departmentService")
-	private DepartmentService departmentService;
+	@Resource(name="warehouseMasterService")
+	private WareHouseMasterService wareHouseMasterService;
 
-	@RequestMapping(value = "/showdepartmentmaster", method = RequestMethod.GET)
-	public String showDepartmentMasterPage(Model model) {
+	@RequestMapping(value = "/showwarehousemaster", method = RequestMethod.GET)
+	public String showWareHouseMasterPage(Model model) {
 
-		System.out.println("Inside Show Department Master Page Method ");
-		model.addAttribute("department", new Department());
-		return "departmentmaster";
+		System.out.println("Inside Show WareHouse Master Page Method ");
+		model.addAttribute("wareHouse", new WareHouse());
+		return "warehousemaster";
 	}
 	
-	@RequestMapping(value="/savedepartment",method=RequestMethod.POST)
-	public String saveDepartment(@ModelAttribute("department") Department department){
+	@RequestMapping(value="/savewarehouse",method=RequestMethod.POST)
+	public String saveDepartment(@ModelAttribute("wareHouse") WareHouse wareHouse){
 		
-		System.out.println("Inside Add Department Controller");
-		departmentService.addDepartment(department);
+		System.out.println("Inside Add wareHuseS Controller");
+		wareHouseMasterService.addWareHouse(wareHouse);
 
-		return "departmentmaster";
+		return "warehousemaster";
 	}
 }

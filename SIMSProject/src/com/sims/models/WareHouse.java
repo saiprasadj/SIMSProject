@@ -4,103 +4,64 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Product_Master")
-public class Product implements Serializable {
+@Table(name="WareHouse_Master")
+public class WareHouse implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "ID")
-	private String productId;
-
-	@Column(name = "PRODUCT_NAME")
-	private String productName;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="warehousemastersequence")
+	@SequenceGenerator(name="warehousemastersequence", sequenceName="warehouse_master_sequence", allocationSize=1)	
+	private Integer  wareHouseId ;
+	
+	@Column(name = "WAREHOUSE_NAME")
+	private String wareHouseName;
 
 	@Column(name = "ALIAS_NAME")
 	private String aliasName;
 
-	@Column(name = "PRODUCT_CODE")
-	private String productCode;
+	@Column(name = "WAREHOUSE_CODE")
+	private String wareHouseCode;
+
 	
-	@Column(name = "BUYING_PRICE")
-	private Double buyingPrice;
-
-	@Column(name = "SELLING_PRICE")
-	private Double sellingPrice;
-
-	@Column(name = "UOM")
-	private String uom;
-
-	@Column(name = "RECORDER_LEVEL")
-	private String recorderLevel;
-
-	public String getProductName() {
-		return productName;
+	public String getWareHouseName() {
+		return wareHouseName;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setWareHouseName(String wareHouseName) {
+		this.wareHouseName = wareHouseName;
 	}
 
-	public String getAliasNAME() {
+	public String getAliasName() {
 		return aliasName;
 	}
 
-	public void setAlias(String aliasName) {
+	public void setAliasName(String aliasName) {
 		this.aliasName = aliasName;
 	}
 
-	public String getProductCode() {
-		return productCode;
+	public String getWareHouseCode() {
+		return wareHouseCode;
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
+	public void setWareHouseCode(String wareHouseCode) {
+		this.wareHouseCode = wareHouseCode;
 	}
 
-	public Double getBuyingPrice() {
-		return buyingPrice;
+	public Integer getWareHouseId() {
+		return wareHouseId;
 	}
 
-	public void setBuyingPrice(Double buyingPrice) {
-		this.buyingPrice = buyingPrice;
+	public void setWareHouseId(Integer wareHouseId) {
+		this.wareHouseId = wareHouseId;
 	}
-
-	public Double getSellingPrice() {
-		return sellingPrice;
-	}
-
-	public void setSellingPrice(Double sellingPrice) {
-		this.sellingPrice = sellingPrice;
-	}
-
-	public String getUom() {
-		return uom;
-	}
-
-	public void setUom(String uom) {
-		this.uom = uom;
-	}
-
-	public String getRecorderLevel() {
-		return recorderLevel;
-	}
-
-	public void setRecorderLevel(String recorderLevel) {
-		this.recorderLevel = recorderLevel;
-	}
-
-	public String getProductId() {
-		return productId;
-	}
-
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
-
-	}
+	
+}
