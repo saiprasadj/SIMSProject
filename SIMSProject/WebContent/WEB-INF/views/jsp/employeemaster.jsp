@@ -123,6 +123,14 @@
 				<td><form:input path="empDOJ" value="${employee.empDOJ}" /></td>
 			</tr>
 			
+			<tr>
+				<td><form:label path="empImage">Employee Image:</form:label> </td>
+				<td><form:input type="file" path="empImage" enctype="multipart/form-data" value="${employee.empImage}" /> </td>
+			</tr>
+			<tr>
+				<td><form:label path="empIdProof">Employee Id Proof:</form:label> </td>
+				<td><form:input type="file" path="empIdProof" enctype="multipart/form-data" value="${employee.empIdProof}" /> </td>
+			</tr>
 			
 			
 			
@@ -135,6 +143,12 @@
            <td><form:label path="salary">department Salary:</form:label></td>
            <td><form:input path="salary" value="${department.salary}"/></td>
        </tr>
+       
+       <tr>
+           <td><form:label path="empImage">Employee Image:</form:label></td>
+           <td><form:input path="empImage" value="${department.salary}"/></td>
+       </tr>
+       
        
        <tr>
            <td><form:label path="address">department Address:</form:label></td>

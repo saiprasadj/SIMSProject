@@ -11,7 +11,10 @@
 
 	<context:property-placeholder location="classpath:database.properties" />
 	<context:component-scan base-package="com.sims" />
-
+    <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000" />
+	</bean>
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
