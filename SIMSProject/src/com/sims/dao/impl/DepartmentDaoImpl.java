@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.sims.dao.DepartmentDao;
 import com.sims.models.Department;
 
-@Repository(value = "departmentDao")
+@Repository
 public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Resource(name = "sessionFactory")

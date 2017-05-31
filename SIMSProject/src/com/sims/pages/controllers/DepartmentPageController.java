@@ -1,7 +1,6 @@
 package com.sims.pages.controllers;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,8 +13,7 @@ import com.sims.services.DepartmentService;
 @Controller
 @RequestMapping(value = "/department/*")
 public class DepartmentPageController {
-	
-	@Resource(name="departmentService")
+	@Autowired
 	private DepartmentService departmentService;
 
 	@RequestMapping(value = "/showdepartmentmaster", method = RequestMethod.GET)
