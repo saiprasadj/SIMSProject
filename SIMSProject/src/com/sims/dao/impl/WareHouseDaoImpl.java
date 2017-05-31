@@ -13,8 +13,6 @@ import com.sims.models.WareHouse;
 @Repository(value = "wareHouseMasterDao")
 public class WareHouseDaoImpl implements WareHouseDao {
 	
-	@Resource(name = "sessionFactory")
-	private SessionFactory sessionFactory;
 	@Autowired
 	private GenaricDAO genaricDao;
 

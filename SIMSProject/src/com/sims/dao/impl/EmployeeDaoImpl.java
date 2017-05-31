@@ -13,8 +13,6 @@ import com.sims.models.Employee;
 @Repository(value = "employeeDao")
 public class EmployeeDaoImpl implements EmployeeDao {
 	
-	@Resource(name = "sessionFactory")
-	private SessionFactory sessionFactory;
 	@Autowired
 	private GenaricDAO genaricDao;
 	

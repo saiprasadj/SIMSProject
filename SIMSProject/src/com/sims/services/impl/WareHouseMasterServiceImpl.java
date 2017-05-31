@@ -15,7 +15,7 @@ import com.sims.services.WareHouseMasterService;
 public class WareHouseMasterServiceImpl implements WareHouseMasterService {
 	
 	 @Resource(name="wareHouseMasterDao")
-	    private WareHouseDao wareHouseMasterDao;
+	 private WareHouseDao wareHouseMasterDao;
 	   
 
 	@Override
