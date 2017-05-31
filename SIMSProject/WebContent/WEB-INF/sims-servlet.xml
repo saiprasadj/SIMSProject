@@ -37,9 +37,9 @@
 		<property name="username" value="${database.user}"></property>
 		<property name="password" value="${database.password}"></property>
 	</bean>
-	<bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
-		id="sessionFactory">
-		<property name="dataSource" ref="dataSource"></property>
+	 <bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		id="sessionFactory">	 	
+	 		<property name="dataSource" ref="dataSource"></property>
 		<property name="annotatedClasses">
 			<list>
 				<value>com.sims.models.Department</value>
@@ -59,6 +59,13 @@
 	<bean class="org.springframework.orm.hibernate4.HibernateTransactionManager"
 		id="hibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+  <bean id="commonDAO" class="com.sims.genaric.dao.impl.GenaricDAOImpl">
+		<property name="adminUIHibernateTemplate" ref="hibernateTemplate"></property>
 	</bean>
 
 </beans>

@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sims.models.Employee;
 import com.sims.models.WareHouse;
@@ -34,4 +35,13 @@ public class EmployeeMasterController {
 
 		return "employeemaster";
 	}
+	
+	@RequestMapping(value="/getemployee/{empID}",method=RequestMethod.GET)
+	public String getEmployeeById(@RequestParam(value = "empID", required = true) String empID){
+		System.out.println("Inside get employee by Id ");
+		//employeeMasterService.addEmployee(employee);
+
+		return "employeemaster";
+	}
+
 }

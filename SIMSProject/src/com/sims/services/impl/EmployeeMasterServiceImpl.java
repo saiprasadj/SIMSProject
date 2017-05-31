@@ -18,8 +18,20 @@ public class EmployeeMasterServiceImpl implements EmployeeMasterService {
 	 private EmployeeDao employeeDao;   
 	@Override
 	 @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-	public void addEmployee(Employee wareHouse) {
-		employeeDao.addEmployee(wareHouse);		
+	public void addEmployee(Employee employee) {
+		employeeDao.addEmployee(employee);		
+	}
+	@Override
+	public void getEmployeeById(Integer Id) {
+		// TODO Auto-generated method stub
+		Employee empObj=employeeDao.getEmployeeById(Id);
+		
+	}
+	@Override
+	public void deeleteEmployeeById(Integer Id) {
+		// TODO Auto-generated method stub
+		employeeDao.deleteEmployeeById(Id);
+		
 	}
 
 }
