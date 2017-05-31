@@ -36,12 +36,20 @@ public class EmployeeMasterController {
 		return "employeemaster";
 	}
 	
-	@RequestMapping(value="/getemployee/{empID}",method=RequestMethod.GET)
-	public String getEmployeeById(@RequestParam(value = "empID", required = true) String empID){
+	@RequestMapping(value="/getemployee/{empId}",method=RequestMethod.GET)
+	public String getEmployeeById(@RequestParam(value = "empID", required = true) Integer empId){
 		System.out.println("Inside get employee by Id ");
-		//employeeMasterService.addEmployee(employee);
+		Employee empObj=employeeMasterService.getEmployeeById(empId);
 
 		return "employeemaster";
 	}
+	
+	@RequestMapping(value="/delete/{empId}",method=RequestMethod.GET)
+	public void deleteEmployeeById(@RequestParam(value = "empID", required = true) Integer empId){
+		System.out.println("Inside get employee by Id ");
+		employeeMasterService.getEmployeeById(empId);
+
+	}
+
 
 }

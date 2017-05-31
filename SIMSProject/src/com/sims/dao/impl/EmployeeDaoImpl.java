@@ -28,15 +28,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public Employee getEmployeeById(Integer Id) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee emp=(Employee)genaricDao.findEntityById(Employee.class, Id);
+		return emp;
 	}
 
 	@Override
-	public String deleteEmployeeById(Integer Id) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteEmployeeById(Integer Id) {
+		try{
+			genaricDao.deleteEntityById(Employee.class, Id);
+		}catch(Exception e){
+			e.printStackTrace();			
+		}
 	}
-
 
 }

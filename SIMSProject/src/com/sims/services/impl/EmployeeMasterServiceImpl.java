@@ -22,10 +22,11 @@ public class EmployeeMasterServiceImpl implements EmployeeMasterService {
 		employeeDao.addEmployee(employee);		
 	}
 	@Override
-	public void getEmployeeById(Integer Id) {
+	public Employee getEmployeeById(Integer Id) {
 		// TODO Auto-generated method stub
-		Employee empObj=employeeDao.getEmployeeById(Id);
-		
+		Employee empObj=null;
+		empObj=employeeDao.getEmployeeById(Id);
+		return empObj;
 	}
 	@Override
 	public void deeleteEmployeeById(Integer Id) {
