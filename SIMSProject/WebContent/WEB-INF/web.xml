@@ -30,7 +30,4 @@
 	<listener>
 	<listener-class>com.sims.utils.SIMSServletContextListener</listener-class>
 	</listener>
-
 </web-app>
-
-
