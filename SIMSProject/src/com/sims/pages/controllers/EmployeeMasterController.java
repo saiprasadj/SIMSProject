@@ -47,7 +47,7 @@ public class EmployeeMasterController {
 	@RequestMapping(value="/delete/{empId}",method=RequestMethod.GET)
 	public void deleteEmployeeById(@RequestParam(value = "empID", required = true) Integer empId){
 		System.out.println("Inside get employee by Id ");
-		employeeMasterService.getEmployeeById(empId);
+		employeeMasterService.deeleteEmployeeById(empId);
 
 	}
 
